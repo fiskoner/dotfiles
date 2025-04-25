@@ -2,7 +2,6 @@
 -- │  init.lua  ·  minimal bootstrap for lazy.nvim           │
 -- ╰──────────────────────────────────────────────────────────╯
 
--- 0. Leader keys – define them *before* plugins do keymaps
 vim.g.mapleader = " "           -- <Space>
 vim.g.maplocalleader = ","      -- local leader
 
@@ -19,4 +18,3 @@ require("lazy").setup("plugins", {
   defaults = { lazy = true },   
   ui = { border = "rounded" }, 
 })
-
