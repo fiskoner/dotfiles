@@ -19,4 +19,6 @@ require("lazy").setup("plugins", {
   ui = { border = "rounded" }, 
 })
 
+vim.opt.number = true
+
 require("keymaps")
