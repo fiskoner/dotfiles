@@ -72,7 +72,14 @@ vim.keymap.set('n', '<leader>gn', ':Neogit<CR>', { desc = "Neogit" })
 vim.keymap.set('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', { desc = "Toggle Git Blame" })
 
 -- ------- oil.nvim -------
-vim.keymap.set("n", "<leader>of", "<cmd>Oil<cr>", { noremap = true, silent = true, desc = "Open Oil file browser" })
+vim.keymap.set("n", "<leader>oo", "<cmd>Oil<cr>", { noremap = true, silent = true, desc = "Open Oil file browser" })
+vim.keymap.set("n", "<leader>of", "<cmd>Oil --float<cr>", { noremap = true, silent = true, desc = "Open floating Oil file browser" })
+
+-- ------- Bufferline -------
+-- Navigate to previous buffer
+vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true, desc = "Previous Buffer" })
+-- Navigate to next buffer
+vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true, desc = "Next Buffer" })
 
 
 -- -------  Keymaps -------

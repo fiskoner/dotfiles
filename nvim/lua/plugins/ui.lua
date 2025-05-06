@@ -110,6 +110,7 @@ return {
       vim.cmd.colorscheme("monokai-pro")
     end,
   },
+
   {
     "stevearc/oil.nvim",
     lazy = false,
@@ -192,9 +193,9 @@ return {
         end,
       },
       float = {
-        padding = 2,
-        max_width = 0,
-        max_height = 0,
+        padding = 5,
+        max_width = 0.6,
+        max_height = 0.6,
         border = "rounded",
         win_options = {
           winblend = 0,
@@ -249,4 +250,39 @@ return {
       require("oil").setup(opts)
     end,
   },
+  
+  {
+    "akinsho/nvim-bufferline.lua",
+    event = "BufWinEnter",
+    config = function()
+      require("bufferline").setup({
+        options = {
+          mode = "buffers",
+          separator_style = "slant",
+          numbers = "none",
+          indicator = {
+            icon = "▎",
+            style = "icon",
+          },
+	  max_name_length = 20,
+	  truncate_names = true,
+	  tab_size = 20,
+          buffer_close_icon = "x",
+          modified_icon = "●",
+          close_icon = "",
+          left_trunc_marker = "",
+          right_trunc_marker = "",
+	  show_buffer_icons = false,
+	  show_buffer_close_icons = false,
+	  show_close_icon = false,
+	  show_tab_indicators = false,
+	  show_duplicate_prefix = true,
+	  separator_style = "thin",
+	  enforce_regular_tabs = false,
+	  always_show_bufferline = true,
+        },
+      })
+    end,
+  }
+
 }
