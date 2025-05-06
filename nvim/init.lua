@@ -21,4 +21,7 @@ require("lazy").setup("plugins", {
 
 vim.opt.number = true
 
+-- Enable system clipboard integration across Linux, macOS, and Windows.
+vim.opt.clipboard = "unnamedplus"
+
 require("keymaps")

@@ -36,9 +36,15 @@ return {
       pickers = {
         find_files = {
           theme = "dropdown",
+	  hidden = true,
+	  no_ignore = true,
+	  layout_config = { width = 0.5, height = 0.5 },
         },
         live_grep = {
-          theme = "dropdown",
+          theme = "cursor",
+	  hidden = true,
+	  no_ignore = true,
+	  layout_config = { width = 0.5, height = 0.5 },
         },
         buffers = {
           theme = "dropdown",
