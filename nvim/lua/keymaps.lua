@@ -59,7 +59,8 @@ vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, { desc = "Search
 -- Git: Fugitive commands (status, commit, push)
 vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = "Git Status" })
 vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', { desc = "Git Commit" })
-vim.keymap.set('n', '<leader>gp', ':Git push<CR>', { desc = "Git Push" })
+vim.keymap.set('n', '<leader>gp', ':Git pull<CR>', { desc = "Git Pull" })
+vim.keymap.set('n', '<leader>gP', ':Git push<CR>', { desc = "Git Push" })
 
 -- Git: Diffview commands for opening and closing diffs
 vim.keymap.set('n', '<leader>gd', ':DiffviewOpen<CR>', { desc = "Open Diffview" })
