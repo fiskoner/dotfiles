@@ -48,7 +48,13 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       local mason_lsp = require("mason-lspconfig")
-      local util = require("lspconfig.util")
+      util = require("lspconfig.util")  -- Fix the util variable assignment
+      
+      -- Make sure to call setup before setup_handlers
+      mason_lsp.setup({
+        ensure_installed = { "basedpyright", "ruff" },
+        automatic_installation = true,
+      })
 
       mason_lsp.setup_handlers({
         -- disable vanilla Pyright – i only need BasedPyright
@@ -56,7 +62,7 @@ return {
         ["basedpyright"] = function()
           lspconfig.basedpyright.setup({
             on_attach = on_attach,
-	    root_dir  = util.root_pattern(
+            root_dir  = util.root_pattern(
               "pyrightconfig.json",
               "pyproject.toml",
               "setup.cfg",
@@ -71,7 +77,7 @@ return {
                   indexing = true,
                   autoSearchPaths = true,
                   useLibraryCodeForTypes = true,
-		  autoImportCompletions = true,
+                  autoImportCompletions = true,
                 },
               },
             },
@@ -86,9 +92,7 @@ return {
           })
         end,
         -- fallback for any other server:
-        function(server_name)
-          default_setup(server_name)
-        end,
+        default_setup,
       })
     end,
   },
