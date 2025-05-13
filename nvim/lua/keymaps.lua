@@ -87,6 +87,21 @@ vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", { noremap = true, s
 vim.keymap.set('i', '<localleader>cm', function() require("cmp").complete() end, { desc = "Trigger Completion", silent = true })
 
 
+-- ------- Persisted.nvim -------
+-- load the session for the current directory
+vim.keymap.set("n", "<leader>qs", "<cmd>SessionLoad<cr>", { desc = "Load Session" })
+-- select a session to load
+vim.keymap.set("n", "<leader>qS", "<cmd>Telescope persisted<cr>", { desc = "Select Session" })
+-- load the last session
+vim.keymap.set("n", "<leader>ql", "<cmd>SessionLoadLast<cr>", { desc = "Load Last Session" })
+-- stop Persisted => session won't be saved on exit
+vim.keymap.set("n", "<leader>qd", "<cmd>SessionStop<cr>", { desc = "Stop Session" })
+-- save current session
+vim.keymap.set("n", "<leader>qw", "<cmd>SessionSave<cr>", { desc = "Save Session" })
+-- toggle session (load/start/stop)
+vim.keymap.set("n", "<leader>qt", "<cmd>SessionToggle<cr>", { desc = "Toggle Session" })
+
+
 return {
   lsp_keymaps = lsp_keymaps, -- Export the LSP keymaps function
 }

@@ -19,7 +19,7 @@ return {
         copilot = function()
           return require("codecompanion.adapters").extend("copilot", {
             schema = {
-              model = { default = "o3-mini" },
+              model = { default = "claude-3.7-sonnet-thought" },
             },
           })
         end,
